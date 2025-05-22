@@ -25,3 +25,7 @@ function divide(a, b) {
 function modulo(a, b) {
     return a % b;
 }
+
+function operate(num1, num2, func) {
+    return func(num1, num2);
+}
