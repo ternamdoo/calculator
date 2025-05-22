@@ -8,24 +8,24 @@ let operator;
 let secondNumber;
 
 // Define the functions for the calculator operator keys
-function add(a, b) {
+const add = function(a, b) {
     return a + b;
 }
-function subtract(a, b) {
+const subtract = function(a, b) {
     return a - b;
 }
-function multiply(a, b) {
+const multiply = function(a, b) {
     return a * b;
 }
 
-function divide(a, b) {
+const divide = function(a, b) {
     return a / b;
 }
 
-function modulo(a, b) {
+const modulo = function(a, b) {
     return a % b;
 }
 
-function operate(num1, num2, func) {
+const operate = function(num1, num2, func) {
     return func(num1, num2);
 }
