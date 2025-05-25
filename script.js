@@ -24,8 +24,21 @@ digits.forEach((digit) => {
 // Delete last pressed key
 const del = document.querySelector('.delete-last-input');
 del.addEventListener('click', () => {
-    display.textContent = deleteLastInput(display.textContent);
+    if (display.textContent !== '0') {
+        display.textContent = deleteLastInput(display.textContent);
+    }
+    if (display.textContent.length <= 0) {
+        display.textContent = '0'
+    } 
 });
+
+
+// Evaluate percentages
+const percentage = document.querySelector('.percentage');
+percentage.addEventListener('click', () => {
+    display.textContent = evaluatePercentage(display.textContent);
+});
+
 
 // Define the functions for the calculator operator keys
 const add = function(a, b) {
@@ -42,8 +55,8 @@ const divide = function(a, b) {
     return a / b;
 }
 
-const modulo = function(a, b) {
-    return a % b;
+const evaluatePercentage = function(num) {
+    return num / 100;
 }
 
 const operate = function(num1, num2, func) {
