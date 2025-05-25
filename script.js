@@ -21,6 +21,18 @@ digits.forEach((digit) => {
     })
 });
 
+// Prefix or remove -ve signs to/from numbers
+const negativeSignToggle = document.querySelector('.negative-sign-toggle');
+negativeSignToggle.addEventListener('click', () => {
+    if (display.textContent !== '0') {
+        if (!display.textContent.startsWith('-')) {
+            display.textContent = '-' + display.textContent;
+        } else {
+            display.textContent = display.textContent.slice(1,)
+        }
+    }
+});
+
 // Delete last pressed key
 const del = document.querySelector('.delete-last-input');
 del.addEventListener('click', () => {
