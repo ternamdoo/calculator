@@ -64,6 +64,9 @@ const multiply = function(a, b) {
 }
 
 const divide = function(a, b) {
+    if (b === 0) {
+        return "Zero Division ERROR!";
+    }
     return a / b;
 }
 
