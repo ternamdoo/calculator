@@ -21,6 +21,12 @@ digits.forEach((digit) => {
     })
 });
 
+// Delete last pressed key
+const del = document.querySelector('.delete-last-input');
+del.addEventListener('click', () => {
+    display.textContent = deleteLastInput(display.textContent);
+});
+
 // Define the functions for the calculator operator keys
 const add = function(a, b) {
     return a + b;
@@ -42,4 +48,8 @@ const modulo = function(a, b) {
 
 const operate = function(num1, num2, func) {
     return func(num1, num2);
+}
+
+const deleteLastInput = function(str) {
+    return str.slice(0, (str.length -1));
 }
