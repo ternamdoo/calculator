@@ -93,7 +93,7 @@ const arithmeticOperators = document.querySelectorAll('.arithmetic');
 arithmeticOperators.forEach((button) => {
     button.addEventListener('click', () => {
         // the first sequence of numbers is saved to a variable, firstNumber. 
-        firstNumber = display.textContent;
+        firstNumber = Number(display.textContent);
         display.textContent = '0';
         alert(firstNumber);
         switch (button.textContent) {
@@ -123,7 +123,7 @@ arithmeticOperators.forEach((button) => {
 // operation on both numbers and returns a result.
 const evaluate = document.querySelector('.equals');
 evaluate.addEventListener('click', () => {
-    secondNumber = display.textContent;
+    secondNumber = Number(display.textContent);
     alert(secondNumber);
     const result = operate(firstNumber, secondNumber, operator);
     display.textContent = result;
