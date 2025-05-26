@@ -3,9 +3,9 @@ const display = document.querySelector('.display');
 display.textContent = "0";
 
 // Initialize variables for performing operations
-let firstNumber;
-let operator;
-let secondNumber;
+let firstNumber = null;
+let secondNumber = null;
+let operator = null;
 
 // Get the digits when clicked
 let clickedNumber;
@@ -81,3 +81,26 @@ const operate = function(num1, num2, func) {
 const deleteLastInput = function(str) {
     return str.slice(0, (str.length -1));
 }
+
+// I'm building a calculator app using JavaScript. 
+// The user may click a button on the calculator and it'll appear on the display. 
+// However, I don't know hot to implement the following logic:
+
+// - The user enters a sequence of numbers
+// - If the user clicks any operator button (+, -, *, /), 
+// the first sequence of numbers is saved to a variable, num1. 
+// The operator type is saved to another variable operator.
+
+// - The user may then enter another sequence of numbers
+
+// - If the user clicks on the = sign, the  new number sequence is saved to 
+// a new variable, num2. An operate function is then called. 
+// The operate function takes 3 arguments, num1, num2, and the operator. 
+// The operator is a function that takes num1 and num2 and performs the 
+// operation on both numbers and returns a result.
+
+// - If the user clicks on another operator after clicking on the second 
+// sequence of numbers, the first operator gets evaluated and the result is 
+// returned to num1, and then the recently clicked operator replaces the former 
+// value in the operator variable, then the user may enter a new sequence 
+// of numbers for num2.
