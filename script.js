@@ -3,9 +3,9 @@ const display = document.querySelector('.display');
 display.textContent = "0";
 
 // Initialize variables for performing operations
-let firstNumber = null;
-let secondNumber = null;
-let operator = null;
+let firstNumber;
+let operator;
+let secondNumber;
 
 // Get the digits when clicked
 let clickedNumber;
@@ -84,12 +84,35 @@ const deleteLastInput = function(str) {
 
 // I'm building a calculator app using JavaScript. 
 // The user may click a button on the calculator and it'll appear on the display. 
-// However, I don't know hot to implement the following logic:
+// However, I don't know how to implement the following logic:
 
 // - The user enters a sequence of numbers
 // - If the user clicks any operator button (+, -, *, /), 
-// the first sequence of numbers is saved to a variable, num1. 
 // The operator type is saved to another variable operator.
+const arithmeticOperators = document.querySelectorAll('.arithmetic');
+arithmeticOperators.forEach((button) => {
+    button.addEventListener('click', () => {
+        // the first sequence of numbers is saved to a variable, firstNumber. 
+        firstNumber = display.textContent;
+        display.textContent = '0';
+        alert(firstNumber);
+        switch (button.textContent) {
+            case '/':
+                operator = divide;
+                break;
+            case '*':
+                operator = multiply;
+                break;
+            case '+':
+                operator = add;
+                break;
+            case '-':
+                operator = subtract;
+                break;
+        }
+        alert(operator);
+    })
+});
 
 // - The user may then enter another sequence of numbers
 
@@ -98,6 +121,15 @@ const deleteLastInput = function(str) {
 // The operate function takes 3 arguments, num1, num2, and the operator. 
 // The operator is a function that takes num1 and num2 and performs the 
 // operation on both numbers and returns a result.
+const evaluate = document.querySelector('.equals');
+evaluate.addEventListener('click', () => {
+    secondNumber = display.textContent;
+    alert(secondNumber);
+    const result = operate(firstNumber, secondNumber, operator);
+    display.textContent = result;
+    alert(result);
+    // display.textContent = result;
+})
 
 // - If the user clicks on another operator after clicking on the second 
 // sequence of numbers, the first operator gets evaluated and the result is 
