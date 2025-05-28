@@ -44,6 +44,13 @@ del.addEventListener('click', () => {
     } 
 });
 
+const decimalPoint = document.querySelector('.decimal-point');
+decimalPoint.addEventListener('click', () => {
+    if (!display.textContent.includes('.')) {
+        display.textContent += '.'
+    }
+});
+
 
 // Evaluate percentages
 const percentage = document.querySelector('.percentage');
