@@ -44,6 +44,7 @@ del.addEventListener('click', () => {
     } 
 });
 
+// Enter a decimal point
 const decimalPoint = document.querySelector('.decimal-point');
 decimalPoint.addEventListener('click', () => {
     if (!display.textContent.includes('.')) {
@@ -51,6 +52,14 @@ decimalPoint.addEventListener('click', () => {
     }
 });
 
+// Reset to default
+const clear = document.querySelector('.clear-calc');
+clear.addEventListener('click', () => {
+    display.textContent = '0';
+    firstNumber = null;
+    operator = null;
+    secondNumber = null
+});
 
 // Evaluate percentages
 const percentage = document.querySelector('.percentage');
@@ -113,7 +122,7 @@ arithmeticOperators.forEach((button) => {
 });
 
 
-// Evalluate an expression
+// Evaluate an expression
 const evaluate = document.querySelector('.equals');
 evaluate.addEventListener('click', () => {
     secondNumber = Number(display.textContent);
